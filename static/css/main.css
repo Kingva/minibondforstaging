@@ -14,7 +14,7 @@
 #header .navbar {
     margin-bottom: 0;
 }
-#header a {color:black;}
+#header a,#bodyContent a.normalwords {color:black;}
 
 #header h3 {
     display: inline-block;
@@ -52,6 +52,8 @@
 #navwords {
      font-family:"微软雅黑";
     display: inline-block;vertical-align: bottom;}
+
+    #navwords span{display: block;}
 
 .promotionItem {
     margin-right: 6px;

@@ -49,8 +49,10 @@
                             <div class="creditFirstLine">
                                 {% for credit in pf.platformrating_set.all %}
                                     <div class="creditItem">
+                                    <a class='normalwords' href="{{credit.url}}">
                                         <span class="ratingOrganize">{{ credit.ratingOrganization.name }}:</span>
                                         <span class="creditIndex">{{ credit.ratingValue }}</span>
+                                        </a>
                                     </div>
                                 {% endfor %}
                             </div>
