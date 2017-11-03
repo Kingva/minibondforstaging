@@ -29,10 +29,13 @@
                             <div class="input-group searchTags">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true">全部</span>
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true">上市系</span>
-                                
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true">国资系</span>
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true">零元撸</span>
-                                <span class="glyphicon glyphicon-pencil" aria-hidden="true">网贷地图</span>
-                                <span class="glyphicon glyphicon-pencil" aria-hidden="true">返利网</span>
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true">网贷之家</span>
+
+
+                             <!--    <span class="glyphicon glyphicon-pencil" aria-hidden="true">网贷地图</span>
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true">返利网</span> -->
 
                             </div>
                         </div>
@@ -70,7 +73,7 @@
                       {% endif %}
                         <div class="promotions">
                             <div class="groupName">返利活动</div>
-                            {% for pr  in  pf.promotioninfo_set.all %}
+                     <!--        {% for pr  in  pf.promotioninfo_set.all %}
                                 {% if pr.isValid %}
                                 <div class="promotionItem">
                                     <a class="btn btn-default btn-sm logTrace" data-area="pinfo" data-target="{{ pf.name }}"
@@ -78,7 +81,7 @@
                                        href="{{ pr.url }}">{{ pr.promotionAgency.name }}</a>
                                 </div>
                                 {% endif %}
-                            {% endfor %}
+                            {% endfor %} -->
 
                              {% if pf.linktowx and pf.linktowx.isValid  %}
                                      <div class="promotionItem">

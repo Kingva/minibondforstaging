@@ -53,7 +53,7 @@
      font-family:"微软雅黑";
     display: inline-block;vertical-align: bottom;}
 
-    #navwords span{display: block;}
+    /*#navwords span{display: block;}  newnavtodo*/
 
 .promotionItem {
     margin-right: 6px;
