@@ -71,12 +71,7 @@ def strongStaticView(contextDict, templateName, staticFileName):
 
 
 def refreshCache(request):
-    # allpfs = Platform.objects.filter(isValid=True)
     allpfs = Platform.objects.all()
-    # pfs = [p for p in allpfs if
-    # p.promotioninfo_set.filter(isValid=True).count() > 0 or (hasattr(p,
-    # 'linktowx') and p.linktowx.isValid)]
-
     pfs = [p for p in allpfs if
            (hasattr(p, 'linktowx') and p.linktowx.isValid)]
 

@@ -6,8 +6,9 @@ import uuid
 class Platform(models.Model):
 	id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 	name = models.CharField(max_length=30)
-	website = models.URLField(default='')
+	website = models.URLField(default=' ')
 	isValid = models.BooleanField(default=False)
+	comments =models.CharField(max_length=30,default=" ")
 
 	def __str__(self):
 		return self.name

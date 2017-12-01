@@ -11,6 +11,39 @@
     padding-bottom: 10px;
     }   
 }
+
+
+.group div{
+    display: inline
+}
+.bs-callout .group
+{
+    font-size:14px;
+}
+
+.groupName {
+    /*font-weight: bolder;*/
+    margin-right: 3px;
+}
+
+.promotionItem {
+    margin-right: 6px;
+}
+
+#dataList .promotions {
+    text-align: left;
+}
+
+.creditItem,.labelItem {
+    margin-right: 10px;
+    line-height: 23px;
+}
+
+
+#header nav img{
+    display:inline-block;height: 42px;border-radius:30px;
+        margin-top: 2px;
+}
 #header .navbar {
     margin-bottom: 0;
 }
@@ -22,51 +55,12 @@
     margin-bottom: 0px;
     margin-top: 0px;
 }
-
-.credits div, .promotions div, .platformLabels div {
-    display: inline
-}
-.bs-callout .credits,.bs-callout .platformLabels,.bs-callout .promotions
-{
-    font-size:12px;
-}
-
-.groupName {
-    font-weight: bolder;
-    margin-right: 15px;
-}
-
-.creditItem,.labelItem {
-    margin-right: 10px;
-    line-height: 23px;
-}
-
-.platformName, .promotions {
-    line-height: 36px;
-}
-
-#header nav img{
-    display:inline-block;height: 42px;border-radius:30px;
-        margin-top: 2px;
-}
 #navwords {
-     font-family:"微软雅黑";
     display: inline-block;vertical-align: bottom;}
 
     /*#navwords span{display: block;}  newnavtodo*/
 
-.promotionItem {
-    margin-right: 6px;
-}
 
-#dataList .promotions {
-    text-align: left;
-}
-
-.platformName {
-    background-color: #dff0d8;
-    font-weight: bolder;
-}
 
 #dataList .bs-callout:nth-child(odd) {
     border-left-color: #d9534f;
@@ -77,13 +71,13 @@
 }
 
 #bodyContent .well {
-     font-family:"微软雅黑";
+
     margin-top: 12px;
     margin-bottom: 12px;
 }
 
 .searchTags span {
-    font-size: 12px;
+    font-size: 14px;
     margin-right: 20px;
 }
 
@@ -91,6 +85,7 @@
     padding-left: 15px;
     margin-top: 13px;
 }
+
 #footer {
     background: grey;
     color: white;
@@ -113,6 +108,7 @@
 
 .bs-callout h4 {
     margin-top: 0;
+    font-weight: bolder;
 }
 
 .bs-callout p:last-child {
@@ -172,4 +168,10 @@
     color: #5bc0de;
 }
 
+/* full changed
+-------------------------------------------------- */
 body>a{display:none;visibility: hidden}
+
+#header,#bodyContent,#footer{
+     font-family:"微软雅黑";
+}

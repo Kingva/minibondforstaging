@@ -24,7 +24,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon">搜一搜</span>
                                 <input id="searchPlatform" value="" type="text" class="form-control"
-                                       placeholder="Text input">
+                                       placeholder=" ">
                             </div>
                             <div class="input-group searchTags">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true">全部</span>
@@ -45,16 +45,16 @@
                 </div>
                 {% for pf in pfs %}
                     <div class="bs-callout">
-                        <h4>{{ pf.name }}</h4>
+                     <h4>{{ pf.name }}</h4>
                          {% if pf.platformrating_set.count > 0  %}
-                        <div class="credits">
-                            <div class="groupName">三方评级</div>
-                            <div class="creditFirstLine">
+                        <div class="credits group">
+                            <div class="groupName">三方评级：</div>
+                            <div class="groupText">
                                 {% for credit in pf.platformrating_set.all %}
                                     <div class="creditItem">
                                     <a class='normalwords' href="{{credit.url}}">
                                         <span class="ratingOrganize">{{ credit.ratingOrganization.name }}:</span>
-                                        <span class="creditIndex">{{ credit.ratingValue }}</span>
+                                        <span class="creditIndex">{{ credit.ratingValue }};</span>
                                         </a>
                                     </div>
                                 {% endfor %}
@@ -62,18 +62,16 @@
                         </div>
                        {% endif %} 
                      {% if pf.platformlabel_set.count > 0  %}
-                     <div class="platformLabels">
-                        <div class="groupName">平台标签</div>
-                        <div>
-                            {% for pl in pf.platformlabel_set.all %}
-                            <span class="labelItem">{{ pl.label.name }}</span>
-                                   {% endfor %}
+                     <div class="platformLabels group">
+                        <div class="groupName">平台标签：</div>
+                        <div class="groupText">
+                               <span class="labelItem">{{ pf.comments }}</span>
                         </div>
                     </div>
                       {% endif %}
                         <div class="promotions">
-                            <div class="groupName">返利活动</div>
-                     <!--        {% for pr  in  pf.promotioninfo_set.all %}
+{#                            <div class="groupName">返利活动</div>#}
+                           {% for pr  in  pf.promotioninfo_set.all %}
                                 {% if pr.isValid %}
                                 <div class="promotionItem">
                                     <a class="btn btn-default btn-sm logTrace" data-area="pinfo" data-target="{{ pf.name }}"
@@ -81,7 +79,7 @@
                                        href="{{ pr.url }}">{{ pr.promotionAgency.name }}</a>
                                 </div>
                                 {% endif %}
-                            {% endfor %} -->
+                            {% endfor %}
 
                              {% if pf.linktowx and pf.linktowx.isValid  %}
                                      <div class="promotionItem">
