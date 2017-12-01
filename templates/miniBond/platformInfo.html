@@ -1,0 +1,23 @@
+         {% if pf.platformrating_set.count > 0 %}
+                                    <div class="credits group">
+                                        <div class="groupName">三方评级：</div>
+                                        <div class="groupText">
+                                            {% for credit in pf.platformrating_set.all %}
+                                                <div class="creditItem">
+                                                    <a class='normalwords' href="{{ credit.url }}">
+                                                        <span class="ratingOrganize">{{ credit.ratingOrganization.name }}:</span>
+                                                        <span class="creditIndex">{{ credit.ratingValue }};</span>
+                                                    </a>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if pf.platformlabel_set.count > 0 %}
+                                    <div class="platformLabels group">
+                                        <div class="groupName">平台标签：</div>
+                                        <div class="groupText">
+                                            <span class="labelItem">{{ pf.comments }}</span>
+                                        </div>
+                                    </div>
+                                {% endif %}
