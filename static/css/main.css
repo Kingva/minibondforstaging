@@ -62,6 +62,7 @@
 
 .gotoInvest{width: 100%;
     /*font-weight: bolder;*/
+        margin-top: 12px;
 }
 
 #dataList .bs-callout:nth-child(odd) {

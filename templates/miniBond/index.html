@@ -47,9 +47,7 @@
                 {% for pf in pfs %}
                     {% if pf.linktowx and pf.linktowx.isValid  %}
                         <div class="bs-callout">
-                                <h4>{{ pf.name }} + 网贷地图  <a class="btn btn-default btn-default  logTrace gotoInvest" data-area="pinfo" data-target="{{ pf.name }}"
-                                   data-propertydata="{{ pr.promotionAgency.name }}" target="_blank"
-                                   href="{{ pr.url }}">去 {{ pr.promotionAgency.name }} 投资 拿返利</a></h4>
+                                <h4>{{ pf.name }} + 网贷地图 </h4>
                                   {% include "miniBond/platformInfo.html" with pf=pf  %}
                                <a class="btn btn-danger  btn-default  logTrace gotoInvest"
                                 data-area="pinfo" data-target="{{ pf.name }}"
