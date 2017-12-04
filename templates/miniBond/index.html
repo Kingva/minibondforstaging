@@ -47,25 +47,30 @@
                 {% for pf in pfs %}
                     {% if pf.linktowx and pf.linktowx.isValid  %}
                         <div class="bs-callout">
-                                <h4>{{ pf.name }}</h4>
+                                <h4>{{ pf.name }} + 网贷地图  <a class="btn btn-default btn-default  logTrace gotoInvest" data-area="pinfo" data-target="{{ pf.name }}"
+                                   data-propertydata="{{ pr.promotionAgency.name }}" target="_blank"
+                                   href="{{ pr.url }}">去 {{ pr.promotionAgency.name }} 投资 拿返利</a></h4>
                                   {% include "miniBond/platformInfo.html" with pf=pf  %}
-                               <a class="btn btn-danger  btn-sm logTrace"
+                               <a class="btn btn-danger  btn-default  logTrace gotoInvest"
                                 data-area="pinfo" data-target="{{ pf.name }}"
                                data-propertyData="vditu"
-                               href="/towx/{{ pf.id }}">网贷地图</a>
+                               href="/towx/{{ pf.id }}">去 网贷地图 投资 拿返利</a>
                             </div>
 
-                        
+
                         {% endif %}
                     {% for pr  in  pf.promotioninfo_set.all %}
                         {% if pr.isValid %}
 
                             <div class="bs-callout">
-                                <h4>{{ pf.name }}</h4>
+                                <h4>{{ pf.name }} + {{  pr.promotionAgency.name}}</h4>
                                   {% include "miniBond/platformInfo.html" with pf=pf  %}
-                                <a class="btn btn-default btn-sm logTrace" data-area="pinfo" data-target="{{ pf.name }}"
+                                <a class="btn btn-default btn-default  logTrace gotoInvest" data-area="pinfo" data-target="{{ pf.name }}"
                                    data-propertydata="{{ pr.promotionAgency.name }}" target="_blank"
-                                   href="{{ pr.url }}">{{ pr.promotionAgency.name }}</a>
+                                   href="{{ pr.url }}">去 {{ pr.promotionAgency.name }} 投资 拿返利</a>
+{#                            <p>#}
+{#                                {{ pr.description|linebreaks }}#}
+{#                            </p>#}
                             </div>
 
                         {% endif %}
