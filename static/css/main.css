@@ -11,7 +11,7 @@
     padding-bottom: 10px;
     }   
 }
-
+.promotionComments{color:red;}
 
 .group div{
     display: inline
@@ -41,11 +41,12 @@
 
 
 #header nav img{
-    display:inline-block;height: 42px;border-radius:30px;
+    display:inline-block;height: 32px;border-radius:30px;
         margin-top: 2px;
 }
 #header .navbar {
     margin-bottom: 0;
+    min-height: 36px;
 }
 #header a,#bodyContent a.normalwords {color:black;}
 
@@ -56,7 +57,7 @@
     margin-top: 0px;
 }
 #navwords {
-    display: inline-block;vertical-align: bottom;}
+    display: inline-block;vertical-align: middle;}
 
     /*#navwords span{display: block;}  newnavtodo*/
 

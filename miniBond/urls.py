@@ -16,11 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from miniBond.views import *
+from django.views.generic.base import RedirectView
 #,areaType,target,propertyData):
 app_name = 'miniBond'
 urlpatterns = [
     url(r'^$', index),
     url(r'^hello/', hello),
+    url(r'^favicon.ico$', RedirectView.as_view(url=r'staticaaa/favicon.ico')),
     url(r'^refreshCache/', refreshCache),
     url(r'^myname/(\d{1,2})/$', myname),
     url(r'^index/', index, name='index'),
