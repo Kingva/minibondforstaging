@@ -46,7 +46,7 @@ if __name__ == "__main__":
         promotions = PromotionInfo.objects.filter(promotionAgency=agency)
         promotions.delete()
 
-        for pageindex in range(1, 2):
+        for pageindex in range(1, 6):
             # print(pageindex)
 
             # values = {"currentPage": pageindex}
