@@ -56,6 +56,10 @@
     margin-bottom: 0px;
     margin-top: 0px;
 }
+#header .carousel-caption{
+    bottom: 0px;
+    padding-bottom:0px;
+}
 #navwords {
     display: inline-block;vertical-align: middle;}
 

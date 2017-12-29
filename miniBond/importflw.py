@@ -48,9 +48,9 @@ logger = logging.getLogger("fetchinterests")
 if __name__ == "__main__":
 
     try:
-        pf = "e周行"
-        url = "http://shop.fanli.com/home/licai/detail?id=1601&spm=licai_home.pc.pty-go~ptid-2076~std-28996"
-        comments = "首次投资最高返利：180元+投资金额x1%"
+        pf = "钱多多"
+        url = "http://shop.fanli.com/home/licai/detail?id=1635&spm=licai_home.pc.pty-go~ptid-2210~std-28996"
+        comments = "首次投资最高返利：120元+投资金额x1%"
         isvalid = 1
 
         platform = Platform.objects.filter(name=pf).first()
