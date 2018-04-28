@@ -77,10 +77,10 @@
 #dataList .bs-callout:nth-child(even) {
     border-left-color: #5cb85c;
 }
-
+#updatelabel{ margin-top: 7px; color:grey;}
 #bodyContent .well {
 
-    margin-top: 12px;
+    margin-top: 2px;
     margin-bottom: 12px;
 }
 

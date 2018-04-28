@@ -74,7 +74,7 @@ if __name__ == "__main__":
         for item in items:
             pfname = item[0]
             link = item[1]
-            bonus = "综合年化"+item[2]
+            bonus = "综合年化" + item[2]
 
             platform = Platform.objects.filter(name=pfname).first()
 
@@ -84,18 +84,20 @@ if __name__ == "__main__":
                 promotion = promotion if promotion else PromotionInfo()
                 promotion.url = link
                 promotion.description = bonus
+
                 promotion.platForm = platform
                 promotion.promotionAgency = agency
                 promotion.isValid = 1
                 promotion.save()
                 platform.isValid = 1
                 platform.save()
-                print(platform.name+"+++"+agency.name)
+                print(platform.name + "+++" + agency.name)
 
             else:
-                print("not found."+pfname)
+                print("not found." + pfname)
 
-        # print(html)
+        promotions = PromotionInfo.objects.filter(promotionAgency=agency)
+        promotions.delete()
 
     except e:
         logger.info(e)

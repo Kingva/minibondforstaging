@@ -16,6 +16,9 @@
 
     <div class="container-fluid" id="dataList">
         <div class="row">
+           <div id='updatelabel' class="col-sm-12 col-md-8 col-md-offset-2">
+            数据更新时间：2018-04-27 10:00
+           </div>
             <div class="col-sm-12 col-md-8 col-md-offset-2">
                 <div>
                     <form class="form-horizontal">
@@ -47,7 +50,7 @@
                 {% for pf in pfs %}
 
                         <div class="bs-callout">
-                                <h4>{{ pf.name }} </h4>
+                                <h4> <a class='normalwords' target="_blank" href="{{ pf.website }}">{{ pf.name }} </a></h4>
                                   {% include "miniBond/platformInfo.html" with pf=pf  %}
 
                                    {% if pf.linktowx and pf.linktowx.isValid  %}

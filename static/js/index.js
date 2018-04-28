@@ -27,7 +27,7 @@ $(document).ready(function () {
             dataType: 'json',
             type: 'GET',
             async:true,
-            url: '/minibond/log/'+areaType+"/"+target+"/"+propertyData+"/"
+            url: '/logTrace/'+areaType+"/"+target+"/"+propertyData+"/"
         });
     });
 

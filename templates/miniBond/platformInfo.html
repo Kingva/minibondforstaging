@@ -4,10 +4,10 @@
                                         <div class="groupText">
                                             {% for credit in pf.platformrating_set.all %}
                                                 <div class="creditItem">
-                                                    <a class='normalwords' href="{{ credit.url }}">
+                                                    <div class='normalwords'>
                                                         <span class="ratingOrganize">{{ credit.ratingOrganization.name }}:</span>
                                                         <span class="creditIndex"><strong>{{ credit.ratingValue }}</strong>;</span>
-                                                    </a>
+                                                    </div>
                                                 </div>
                                             {% endfor %}
                                         </div>

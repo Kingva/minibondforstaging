@@ -42,15 +42,11 @@ from miniBond.models import *
 
 if __name__ == "__main__":
     try:
-        agency = PromotionAgency.objects.filter(name="返利魔方").first()
-        promotions = PromotionInfo.objects.filter(promotionAgency=agency)
-        promotions.delete()
 
-        for pageindex in range(1, 6):
-            # print(pageindex)
+        for pageindex in range(1, 2):
+            print(pageindex)
 
-            # values = {"currentPage": pageindex}
-            values = {"page": pageindex}
+            values = {"currentPage": pageindex}
             data = urllib.parse.urlencode(values).encode(encoding='UTF8')
             hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -59,44 +55,32 @@ if __name__ == "__main__":
                    'Accept-Language': 'en-US,en;q=0.8',
                    'Connection': 'keep-alive'}
 
-            url = "http://www.fanlimofang.com/activity"
+            url = "http://www.wdzj.com/dangan/search?filter=e1"
             request = urllib.request.Request(url, data, headers=hdr)
             response = urllib.request.urlopen(request)
             html = response.read().decode('utf-8')
-            # print(html)
 
             pattern = re.compile(
-                '<a href="/Activity/Detail/(.*?)">.*?<div class="bonus">(.*?)</div>.*?<div class="keyword">(.*?)</div>.*?</a>', re.S | re.I)
+                '<li class="item">.*?<a href="(.*?)" target="_blank">(.*?)</a>(.*?)<div class="itemCon clearfix">', re.S)
             items = re.findall(pattern, html)
             for item in items:
-                # print(item)
+                print(item[0])
+                print(item[1])
+                emitems = re.findall("<em>(.*?)</em>", item[2])
+                labeldesc = ""
+                for emitem in emitems:
+                    if emitem.find("评级") < 0:
+                        labeldesc = emitem+" "+labeldesc
 
-                link = "http://www.fanlimofang.com/Activity/Detail/"+item[0]
-                print(link)
-                dr = re.compile(r'<[^>]+>', re.S)
-                bonus = dr.sub('', item[1]).strip().replace(
-                    "\n", "").replace("\r", "")
-                print(''.join(bonus.split(" ")))
-                pfname = re.findall("<span>(.*?)</span>", item[2])[1]
+                labeldesc = " + ".join(labeldesc.strip(" ").split(" "))
+                print(labeldesc)
 
-                platform = Platform.objects.filter(name=pfname).first()
-
-                if platform and agency:
-                    promotion = PromotionInfo.objects.filter(
-                        platForm=platform, promotionAgency=agency).first()
-                    promotion = promotion if promotion else PromotionInfo()
-                    promotion.url = link
-                    promotion.description = bonus
-                    promotion.platForm = platform
-                    promotion.promotionAgency = agency
-                    promotion.isValid = 1
-                    promotion.save()
-                    platform.isValid = 1
-                    platform.save()
-                    print(platform.name+"+++"+agency.name)
-
-                else:
-                    print("not found."+pfname)
+                platform = Platform.objects.filter(name=item[1]).first()
+                platform = platform if platform else Platform()
+                platform.name = item[1]
+                platform.website = "http://www.wdzj.com"+item[0]
+                platform.comments = labeldesc
+                platform.save()
 
     except e:
         # logger.info(e)

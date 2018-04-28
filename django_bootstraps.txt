@@ -7,3 +7,6 @@ http://blog.csdn.net/fx677588/article/details/58164902
 
 csdncode
 http://www.cnblogs.com/blqw/p/3329956.html
+
+tesseract-ocr
+https://www.cnblogs.com/jianqingwang/p/6978724.html
