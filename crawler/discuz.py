@@ -5,6 +5,7 @@ import re
 import time
 import numpy as np
 import openpyxl
+import random
 
 
 # https://blog.csdn.net/anlun/article/details/43404661
@@ -184,7 +185,7 @@ if __name__ == '__main__':
     faildlist = []
     maxtrytosubmit = 20
 
-    for aticle in lsittopublish[0:52]:
+    for aticle in lsittopublish[0:22]:
         print(aticle.username)
         print(aticle.password)
         robot = DiscuzRobot(siteurl,
@@ -193,14 +194,16 @@ if __name__ == '__main__':
 
         publishtimes = 0
 
-        time.sleep(5)
+        time.sleep(random.randint(5, 10))
 
         if aticle.isnew == 1:
             tid = -1
 
-            content = aticle.content + "\r\n\r\n[url=" + \
+            hrefurl = "\r\n\r\n[url=" + \
                 aticle.url+"][color=#ff0000][b]点此查看文章详情" + \
-                ''+"[/b][/color][/url]"
+                ''+"[/b][/color][/url]" if aticle.url else ""
+
+            content = aticle.content + hrefurl
 
             while needtosubmit and publishtimes <= maxtrytosubmit:
                 robot.login()
@@ -224,7 +227,7 @@ if __name__ == '__main__':
                 robot.login()
                 if robot.isLogon:
                     submitted = robot.reply(
-                        aticle.fid, tid, aticle.subject, aticle.content)
+                        aticle.fid, tid, " ", aticle.content)
                     needtosubmit = not submitted
 
                     if not submitted:
