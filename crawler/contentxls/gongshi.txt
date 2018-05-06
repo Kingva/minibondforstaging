@@ -1,0 +1,1 @@
+OFFSET(ук╨е!$B$1,RANDBETWEEN(1,48),0)
