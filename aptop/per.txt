@@ -37,3 +37,4 @@ L2TP Shared Secret: wormholelab
 
 ÍõÇì·¨	320923198212040915	ÕËºÅ	wangqingfaccxi	ÃÜÂë	Ccxi123456
 http://219.232.200.39/uamsso/ 
+http://www.chsi.com.cn/     ÕËºÅ	15201113968	ÃÜÂë	aa112233
