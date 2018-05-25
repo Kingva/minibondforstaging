@@ -41,7 +41,7 @@ class Retriver:
             password = sheet.cell(row=row, column=6).value
             fid = sheet.cell(row=row, column=7).value
 
-            article = Article(title, content, url, isnew,
+            article = Article(title.strip(), content, url, isnew,
                               username, password, fid)
             posts.append(article)
 
@@ -165,6 +165,7 @@ class DiscuzRobot:
             encoding='UTF8'), method='POST', headers=self.hdr)
         # content = urllib.request.urlopen(req).read().decode('UTF8')
         content = self.opener.open(req).read().decode('UTF8')
+        print(subject)
         if subject in content:
             print('publish success!')
             rows = re.findall(r'mod=viewthread&tid=(.*?)\"', content)
@@ -185,16 +186,16 @@ if __name__ == '__main__':
     faildlist = []
     maxtrytosubmit = 20
 
-    for aticle in lsittopublish[0:239]:
+    for aticle in lsittopublish[0:21]:
         print(aticle.username)
-        print(aticle.password)
         robot = DiscuzRobot(siteurl,
                             aticle.username, password)
         needtosubmit = True
 
         publishtimes = 0
+        print(aticle.isnew)
 
-        time.sleep(random.randint(5, 10))
+        time.sleep(random.randint(58, 280))
 
         if aticle.isnew == 1:
             tid = -1
