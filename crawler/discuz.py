@@ -186,7 +186,7 @@ if __name__ == '__main__':
     faildlist = []
     maxtrytosubmit = 20
 
-    for aticle in lsittopublish[0:21]:
+    for aticle in lsittopublish[0:37]:
         print(aticle.username)
         robot = DiscuzRobot(siteurl,
                             aticle.username, password)
