@@ -22,6 +22,7 @@ class Retriver:
     def addPostToList(self, url, subject, content):
         sheet = self.wb[self.sheetname]
         sheet.cell(row=self.row, column=1).value = subject
+        print(content)
         sheet.cell(row=self.row, column=2).value = content
         sheet.cell(row=self.row, column=3).value = url
         sheet.cell(row=self.row, column=4).value = 1
@@ -186,7 +187,7 @@ if __name__ == '__main__':
     faildlist = []
     maxtrytosubmit = 20
 
-    for aticle in lsittopublish[0:37]:
+    for aticle in lsittopublish[0:152]:
         print(aticle.username)
         robot = DiscuzRobot(siteurl,
                             aticle.username, password)
@@ -195,7 +196,7 @@ if __name__ == '__main__':
         publishtimes = 0
         print(aticle.isnew)
 
-        time.sleep(random.randint(58, 280))
+        time.sleep(random.randint(10, 30))
 
         if aticle.isnew == 1:
             tid = -1
