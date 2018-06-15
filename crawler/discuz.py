@@ -182,12 +182,12 @@ if __name__ == '__main__':
     retriver = Retriver("contentxls\content.xlsx", "Sheet1", 2)
     password = 'kingva584520'
     lsittopublish = retriver.retrivePosts()
-    siteurl = 'http://www.zhaiquanren.net'
+    siteurl = 'http://d2.zhaiquanren.net'
     tid = -1
     faildlist = []
     maxtrytosubmit = 20
 
-    for aticle in lsittopublish[0:31]:
+    for aticle in lsittopublish[0:21]:
         print(aticle.username)
         robot = DiscuzRobot(siteurl,
                             aticle.username, password)
@@ -196,7 +196,7 @@ if __name__ == '__main__':
         publishtimes = 0
         print(aticle.isnew)
 
-        time.sleep(random.randint(10, 30))
+        time.sleep(random.randint(10, 200))
 
         if aticle.isnew == 1:
             tid = -1
