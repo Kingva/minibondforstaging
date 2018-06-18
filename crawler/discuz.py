@@ -187,7 +187,7 @@ if __name__ == '__main__':
     faildlist = []
     maxtrytosubmit = 20
 
-    for aticle in lsittopublish[0:21]:
+    for aticle in lsittopublish[0:36]:
         print(aticle.username)
         robot = DiscuzRobot(siteurl,
                             aticle.username, password)
@@ -196,7 +196,7 @@ if __name__ == '__main__':
         publishtimes = 0
         print(aticle.isnew)
 
-        time.sleep(random.randint(10, 200))
+        time.sleep(random.randint(10, 100))
 
         if aticle.isnew == 1:
             tid = -1
