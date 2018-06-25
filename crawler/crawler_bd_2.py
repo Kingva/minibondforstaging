@@ -58,7 +58,7 @@ CHAR_ENTITIES是一个字典前面是特殊字符实体  后面是其对应的�
 
 if __name__ == "__main__":
     try:
-        searchwords = "唐小僧 跑路"
+        searchwords = "钱满仓 爆雷"
         pattern = re.compile(
             '<div class="result c-container ".*?<h3.*?href = "(.*?)".*?>(.*?)</a>.*?<div class="c-abstract">(.*?)...</div>', re.S)
         urlpattern = re.compile('<h3.*?href = "(.*?)"', re.S)
