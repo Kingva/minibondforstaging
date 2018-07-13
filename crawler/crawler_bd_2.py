@@ -58,14 +58,14 @@ CHAR_ENTITIES是一个字典前面是特殊字符实体  后面是其对应的�
 
 if __name__ == "__main__":
     try:
-        searchwords = "钱满仓 爆雷"
+        searchwords = "人人爱家 清盘"
         pattern = re.compile(
             '<div class="result c-container ".*?<h3.*?href = "(.*?)".*?>(.*?)</a>.*?<div class="c-abstract">(.*?)...</div>', re.S)
         urlpattern = re.compile('<h3.*?href = "(.*?)"', re.S)
         clhtmlpattern = re.compile(r'<[^>]+>', re.S)
         retriver = Retriver("contentxls\content.xlsx", "Sheet1", 2)
 
-        for pn in list(reversed(list(range(0, 110, 10)))):
+        for pn in list(reversed(list(range(0, 70, 10)))):
             beforeurl = u"http://www.baidu.com/s?pn={}&wd={}".format(
                 pn, searchwords)
             response = urllib.request.urlopen(
