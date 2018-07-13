@@ -29,6 +29,24 @@ class Retriver:
         self.wb.save(self.filename)
         self.row += 1
 
+    def retriveTasts(self):
+        sheet = self.wb[self.sheetname]
+        tasks = []
+        row = self.row
+        title = sheet.cell(row=row, column=1).value
+        while title != "" and title is not None:
+            fid = sheet.cell(row=row, column=2).value
+            tid = sheet.cell(row=row, column=3).value
+            keywords = sheet.cell(row=row, column=4).value
+
+            task = Task(title.strip(), fid, tid, keywords)
+            tasks.append(article)
+
+            row += 1
+            title = sheet.cell(row=row, column=1).value
+
+        return tasks
+
     def retrivePosts(self):
         sheet = self.wb[self.sheetname]
         posts = []
@@ -50,6 +68,16 @@ class Retriver:
             title = sheet.cell(row=row, column=1).value
 
         return posts
+
+
+class Task:
+    """docstring for Task"""
+
+    def __init__(self, name, fid, tid, keywords):
+        self.name = name
+        self.fid = fid
+        self.tid = tid
+        self.searchKeywords = keywords
 
 
 class Article:
