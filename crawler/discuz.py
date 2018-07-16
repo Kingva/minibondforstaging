@@ -19,13 +19,17 @@ class Retriver:
         self.wb = openpyxl.load_workbook(filename, data_only=True)
         self.row = startrow
 
-    def addPostToList(self, url, subject, content):
+    def addPostToList(self, url, subject, content, fid, tid, name):
         sheet = self.wb[self.sheetname]
         sheet.cell(row=self.row, column=1).value = subject
         print(content)
         sheet.cell(row=self.row, column=2).value = content
         sheet.cell(row=self.row, column=3).value = url
         sheet.cell(row=self.row, column=4).value = 1
+        sheet.cell(row=self.row, column=7).value = fid
+        sheet.cell(row=self.row, column=8).value = tid
+        sheet.cell(row=self.row, column=9).value = name
+
         self.wb.save(self.filename)
         self.row += 1
 
@@ -40,7 +44,7 @@ class Retriver:
             keywords = sheet.cell(row=row, column=4).value
 
             task = Task(title.strip(), fid, tid, keywords)
-            tasks.append(article)
+            tasks.append(task)
 
             row += 1
             title = sheet.cell(row=row, column=1).value

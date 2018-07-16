@@ -67,7 +67,7 @@ if __name__ == "__main__":
         endtf = int(time.time())
 
         for task in tasks:
-            searchwords = task.name+" " + task.searchKeywords
+            searchwords = task.searchKeywords
             pattern = re.compile(
                 '<div class="result c-container ".*?<h3.*?href = "(.*?)".*?>(.*?)</a>.*?<div class="c-abstract">(.*?)...</div>', re.S)
             urlpattern = re.compile('<h3.*?href = "(.*?)"', re.S)
