@@ -67,6 +67,12 @@ if __name__ == "__main__":
         endtf = int(time.time())
 
         for task in tasks:
+
+            retriver.addPostToList(
+                "", task.name+" "+datetime.today().strftime("%Y-%m-%d")+" 资讯汇总",
+                '[color=#ff0000][b]关注“债权人”微信公众号，访问其中的论坛，大家一起抱团取暖获取最新资讯。维权，就是要关注“债权人”。[/b][/color]',
+                task.fid, task.tid, task.name, isnew=1)
+
             searchwords = task.name+" " + task.searchKeywords
             pattern = re.compile(
                 '<div class="result c-container ".*?<h3.*?href = "(.*?)".*?>(.*?)</a>.*?<div class="c-abstract">(.*?)...</div>', re.S)

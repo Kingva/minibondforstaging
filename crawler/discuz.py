@@ -19,13 +19,14 @@ class Retriver:
         self.wb = openpyxl.load_workbook(filename, data_only=True)
         self.row = startrow
 
-    def addPostToList(self, url, subject, content, fid, tid, name):
+    def addPostToList(self, url, subject, content, fid, tid, name, isnew=0):
         sheet = self.wb[self.sheetname]
         sheet.cell(row=self.row, column=1).value = subject
         print(content)
         sheet.cell(row=self.row, column=2).value = content
         sheet.cell(row=self.row, column=3).value = url
-        sheet.cell(row=self.row, column=4).value = 1
+        sheet.cell(row=self.row, column=4).value = isnew
+        sheet.cell(row=self.row, column=5).value = "小编人"
         sheet.cell(row=self.row, column=7).value = fid
         sheet.cell(row=self.row, column=8).value = tid
         sheet.cell(row=self.row, column=9).value = name
@@ -219,7 +220,7 @@ if __name__ == '__main__':
     faildlist = []
     maxtrytosubmit = 20
 
-    for aticle in lsittopublish[0:36]:
+    for aticle in lsittopublish[0:212]:
         print(aticle.username)
         robot = DiscuzRobot(siteurl,
                             aticle.username, password)
@@ -228,7 +229,7 @@ if __name__ == '__main__':
         publishtimes = 0
         print(aticle.isnew)
 
-        time.sleep(random.randint(6, 108))
+        time.sleep(random.randint(6, 10))
 
         if aticle.isnew == 1:
             tid = -1
@@ -260,8 +261,14 @@ if __name__ == '__main__':
             while needtosubmit and publishtimes <= maxtrytosubmit:
                 robot.login()
                 if robot.isLogon:
+                    hrefurl = "\r\n\r\n[url=" + \
+                        aticle.url+"][color=#ff0000][b]点此查看文章详情" + \
+                        ''+"[/b][/color][/url]" if aticle.url else ""
+
+                    content = aticle.content + hrefurl
+
                     submitted = robot.reply(
-                        aticle.fid, tid, " ", aticle.content)
+                        aticle.fid, tid, " ", content)
                     needtosubmit = not submitted
 
                     if not submitted:
