@@ -81,8 +81,10 @@ if __name__ == "__main__":
             alltitles = []
 
             for pn in list(reversed(list(range(0, 32, 10)))):
-                beforeurl = u"http://www.baidu.com/s?pn={}&wd={}&gpc=stf={},{}|stftype=2".format(
-                    pn, searchwords, starttf, endtf)
+                # beforeurl = u"http://www.baidu.com/s?pn={}&wd={}&gpc=stf={},{}|stftype=2".format(
+                #     pn, searchwords, starttf, endtf)
+                beforeurl = u"http://www.baidu.com/s?pn={}&wd={}".format(
+                pn, searchwords)
                 print(beforeurl)
                 response = urllib.request.urlopen(
                     urllib.parse.quote_plus(beforeurl, safe=string.printable))
