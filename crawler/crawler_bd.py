@@ -80,11 +80,11 @@ if __name__ == "__main__":
             clhtmlpattern = re.compile(r'<[^>]+>', re.S)
             alltitles = []
 
-            for pn in list(reversed(list(range(0, 2, 10)))):
-                # beforeurl = u"http://www.baidu.com/s?pn={}&wd={}&gpc=stf={},{}|stftype=2".format(
-                #     pn, searchwords, starttf, endtf)
-                beforeurl = u"http://www.baidu.com/s?pn={}&wd={}".format(
-                pn, searchwords)
+            for pn in list(reversed(list(range(0, 12, 10)))):
+                beforeurl = u"http://www.baidu.com/s?pn={}&wd={}&gpc=stf={},{}|stftype=2".format(
+                    pn, searchwords, starttf, endtf)
+                # beforeurl = u"http://www.baidu.com/s?pn={}&wd={}".format(
+                # pn, searchwords)
                 print(beforeurl)
                 response = urllib.request.urlopen(
                     urllib.parse.quote_plus(beforeurl, safe=string.printable))
@@ -105,9 +105,12 @@ if __name__ == "__main__":
                         "_")]
 
                     if subject not in alltitles:
-                        alltitles.append(subject)
-                        retriver.addPostToList(
-                            url, subject, summary, task.fid, task.tid, task.name)
+                        try:
+                            alltitles.append(subject)
+                            retriver.addPostToList(
+                                url, subject, summary, task.fid, task.tid, task.name)
+                        except Exception as err:
+                            print(err)
 
     except e:
         # logger.info(e)
