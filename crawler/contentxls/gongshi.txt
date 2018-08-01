@@ -1,3 +1,6 @@
 OFFSET(账号!$B$1,RANDBETWEEN(1,48),0)
 
 =OR(ISNUMBER(FIND("2018-",A1)),A1="",ISNUMBER(FIND("加入本群",A1)),ISNUMBER(FIND("大家好，",A1)),ISNUMBER(FIND("撤回了一条",A1)),ISNUMBER(FIND("[图片]",A1)),LEN(SUBSTITUTE(SUBSTITUTE(A1," ","")," ",""))<4)
+
+E:\stasticalReports\Zhangke\bond_new_issuance_daily.py -f qfwang@ccxi.com.cn -t shzhai@ccxi.com.cn
+qfwang@ccxi.com.cn xli@ccxi.com.cn yldong@ccxi.com.cn ylu@ccxi.com.cn  shli@ccxi.com.cn yliu01@ccxi.com.cn -s mail.ccxi.com.cn -u qfwang@ccxi.com.cn -p GKai85QCYL
