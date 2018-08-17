@@ -39,7 +39,11 @@ Page({
               avatarUrl: resp_dict.data.avatar,
               nickName: resp_dict.data.username
             }
-          })
+          });
+          wx.setStorage({
+            key: 'login',
+            data: 1,
+          });
         } else {
           that.setData({
             hasUserInfo: false,

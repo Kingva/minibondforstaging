@@ -21,6 +21,9 @@ Page({
         var resp_dict = resp.data;
         if (resp_dict.err_code == 0) {
           // console.log(resp_dict.data)
+          for (var i = 0; i < resp_dict.data.length; i++) {
+            resp_dict.data[i].open = 1;
+          }
           that.setData({
             group_list: resp_dict.data
           })

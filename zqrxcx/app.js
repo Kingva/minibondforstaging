@@ -128,8 +128,8 @@ App({
       content: '您还没有登录，请先登录！',
       showCancel: false,
       success: function () {
-        wx.navigateTo({
-          url: '/pages/login/login',
+        wx.switchTab({
+          url: '/pages/user/user',
         })
       }
     })

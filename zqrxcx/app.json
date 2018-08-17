@@ -4,7 +4,6 @@
     "pages/user/user",
     "pages/detail/detail",
     "pages/forum/forum",
-    "pages/login/login",
     "pages/register/register",
     "pages/forum_list/forum_list",
     "pages/self_post/self_post",
