@@ -1,0 +1,4 @@
+<!--productDetail.wxml-->
+<text>productDetail.wxml</text>
+<view><text>{{title}}</text></view>
+

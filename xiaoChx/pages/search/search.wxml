@@ -1,0 +1,37 @@
+<!--search.wxml-->
+<view class="index">
+  <view class="index-hd">
+    <!-- <image class="index-logo" src="resources/kind/logo.png"></image> -->
+    <view class="index-desc">以下将展示小程序官方组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见小程序开发文档。</view>
+  </view>
+  <view class="">
+    <view class="kind-list">
+    <view wx:for="{{products}}"> 
+<template is="productItem" data="{{...item}}"></template>
+ </view>
+      
+    </view>
+  </view>
+</view>
+
+<template name="productItem">
+<navigator url="../productDetail/productDetail?title= {{bank}} — {{productName}}" hover-class="navigator-hover">
+     
+  <view class="kind-list-item">
+        <view class="kind-list-text">
+         {{bank}} — {{productName}}
+        </view>
+        <view class="kind-list-text">
+        贷款金额：{{ammountText}},贷款期限：{{yearText}},贷款利率：{{rateText}}
+        </view>
+       
+      </view>
+   </navigator>
+</template>
+
+
+
+<!-- <template is="staffName" data="{{...staffA}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template> -->
+
