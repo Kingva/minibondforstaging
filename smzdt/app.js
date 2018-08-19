@@ -171,8 +171,8 @@ App({
   },
 
   globalData: {    
-    base_url: 'https://xcx.zhaiquanren.net/',
-    svr_url: 'https://xcx.zhaiquanren.net/wmapi/',
+    base_url: 'https://dz.smzdt.top/',
+    svr_url: 'https://dz.smzdt.top/wmapi/',
     
     userInfo: null,
     lite_switch: false,
