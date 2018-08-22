@@ -14,6 +14,7 @@ Page({
     have_data: false,
     nomore_data : false,
     lite_switch: app.globalData.lite_switch,
+    needToHide:false,
   },
 
   onLoad: function (options) {
@@ -22,6 +23,7 @@ Page({
     console.log(fid);
     this.setData({
       fid: fid,
+      needToHide:fid==53,
     })
     this.reloadIndex();
     this.get_forum_info();

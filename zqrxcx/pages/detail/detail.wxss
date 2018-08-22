@@ -85,7 +85,8 @@
   font-size: 22rpx;
   border-radius: 5rpx;
   border: 0.1rpx solid #FF6A6A;
-  color: #FF6A6A;
+  background: #FF6A6A;
+  color: white;
   padding: 2px 6rpx;
   margin-top:5rpx;
 }
