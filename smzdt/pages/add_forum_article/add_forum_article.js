@@ -13,6 +13,7 @@ Page({
     aidList: [],
     loading_hidden: true,
     loading_msg: '加载中...',
+    isdisabled:false,
   },
 
   chooseImage: function () {
@@ -99,6 +100,12 @@ Page({
       return;
     }
 
+    that.setData({
+      loading_hidden: false,
+      loading_msg: '加载中...',
+      isdisabled:true
+    })
+
     wx.request({
       url: getApp().globalData.svr_url + 'add_thread.php',
       header: { "content-type": "application/x-www-form-urlencoded" },
@@ -114,6 +121,11 @@ Page({
       success: function(resp) {
         console.log(resp);
         var resp_dict = resp.data;
+        that.setData({
+          loading_hidden: true,
+          loading_msg: '加载中...',
+          isdisabled: false
+        })
         if (resp_dict.err_code == 10001) {
           wx.showModal({
             content: "请先登录",

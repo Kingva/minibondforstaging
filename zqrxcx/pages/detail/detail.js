@@ -324,7 +324,14 @@ Page({
       }
     })
   },
-
+  toForumList: function (e) {
+    // console.log(e);
+    var fid = e.currentTarget.dataset.fid;
+    // console.log(fid);
+    wx.redirectTo({
+      url: '../forum_list/forum_list?fid=' + fid,
+    });
+  },
   toIndex: function () {
     wx.switchTab({
       url: '../index/index',

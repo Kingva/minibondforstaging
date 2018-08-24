@@ -76,7 +76,7 @@
     </view>
     
     <view class="btn-area">
-      <button class="weui-btn" type="primary" bindtap="articleSubmit">提交</button>
+      <button class="weui-btn" type="primary" bindtap="articleSubmit" disabled='{{isdisabled}}'>提交</button>
     </view>
 
   </view>

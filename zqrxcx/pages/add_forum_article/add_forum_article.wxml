@@ -23,7 +23,7 @@
 
         <view class="weui-cell">
             <view class="weui-cell__bd">
-                <textarea class="weui-textarea" placeholder="请输入内容" bindinput="inputContent" style="height: 5em" value="{{articleContent}}"/>
+                <textarea class="weui-textarea" maxlength="-1" placeholder="请输入内容" bindinput="inputContent" style="height: 10em" value="{{articleContent}}"/>
                 <!-- <view class="weui-textarea-counter">0/200</view> -->
             </view>
         </view>
@@ -58,7 +58,7 @@
     </view>
     
     <view class="btn-area">
-      <button class="weui-btn" type="primary" bindtap="articleSubmit">提交</button>
+      <button class="weui-btn" type="primary" disabled='{{isdisabled}}' bindtap="articleSubmit">提交</button>
     </view>
 
   </view>
