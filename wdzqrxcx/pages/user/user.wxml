@@ -35,7 +35,7 @@
        
       </block>
       
-      <block wx:if="{{hasUserInfo === true}}">
+      <!-- <block wx:if="{{hasUserInfo === true}}">
         <navigator url="../self_thread/self_thread" class="navigator">
           <view class="navigator-text">我的帖子</view>
           <view class="navigator-arrow"></view>
@@ -44,7 +44,7 @@
           <view class="navigator-text">我的回复</view>
           <view class="navigator-arrow"></view>
         </navigator>
-      </block>
+      </block> -->
     </view>
 
     <block wx:if="{{hasUserInfo === true}}">

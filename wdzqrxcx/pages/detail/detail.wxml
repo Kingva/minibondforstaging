@@ -125,7 +125,7 @@
       </view>
     </view>
   </view>
-  <view class="page-tail">
+  <!-- <view class="page-tail">
       <block wx:if="{{login_flag}}">
       <view class="resp-input-cell">
         <input class="resp-input" type="text" placeholder="说点什么吧..." bindinput="input_message" value="{{message}}"/>
@@ -135,7 +135,7 @@
       <block wx:else>
         <navigator class="need-login" open-type="switchTab" url="/pages/user/user">点此处登录之后，即可回复本帖</navigator>
       </block>
-  </view>
+  </view> -->
   <block wx:if="{{scroll_show}}">
     <view class="scroll-to-top" bindtap="scrollToTop">
       <image class="scroll-to-top-img" src="../../resources/image/top.png"/>

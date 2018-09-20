@@ -13,7 +13,7 @@
   "window": {
     "backgroundTextStyle": "#323840",
     "navigationBarBackgroundColor": "#4CC7D7",
-    "navigationBarTitleText": "债权人网",
+    "navigationBarTitleText": "网贷债权人",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": false
   },

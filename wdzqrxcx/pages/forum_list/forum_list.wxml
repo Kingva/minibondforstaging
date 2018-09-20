@@ -81,9 +81,9 @@
     <!-- 没有更多的数据了 -->
     <template is="zan-loadmore" data="{{ nomore :nomore_data}}"></template>
     <!-- -->
-    <view class="edit-cell" hidden='{{needToHide}}' bindtap="toAddArticle">
+    <!-- <view class="edit-cell" hidden='{{needToHide}}' bindtap="toAddArticle">
       <image class="edit-cell-img" src="../../resources/image/edit.png"/>
-    </view>
+    </view> -->
    
     <block wx:if="{{scroll_show}}">
     <view class="scroll-to-top" bindtap="scrollToTop">
