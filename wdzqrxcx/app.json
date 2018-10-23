@@ -8,7 +8,8 @@
     "pages/forum_list/forum_list",
     "pages/self_post/self_post",
     "pages/self_thread/self_thread",
-    "pages/add_forum_article/add_forum_article"
+    "pages/add_forum_article/add_forum_article",
+    "pages/info_index/info_index"
   ],
   "window": {
     "backgroundTextStyle": "#323840",
@@ -29,11 +30,18 @@
         "selectedIconPath": "resources/image/home.png"
       },
       {
+        "pagePath": "pages/info_index/info_index",
+        "text": "资讯",
+        "iconPath": "resources/image/kind_gray.png",
+        "selectedIconPath": "resources/image/kind.png"
+      },
+      {
         "pagePath": "pages/forum/forum",
         "text": "版块",
         "iconPath": "resources/image/kind_gray.png",
         "selectedIconPath": "resources/image/kind.png"
       },
+     
       {
         "pagePath": "pages/user/user",
         "text": "我的",
