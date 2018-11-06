@@ -24,7 +24,7 @@
           </view>
           <block wx:if="{{thread_data.fid_name}}">
         
-             <view class="thread_data-fid" bindtap="toForumList" data-fid="{{thread_data.fid}}">{{thread_data.fid_name}}</view>
+             <view class="thread_data-fid" bindtap="toForumList" data-fid="{{thread_data.fid}}">点击进入：{{thread_data.fid_name}}</view>
           </block>
           <block wx:else>
             <view class="thread_data-fid">群组</view>
