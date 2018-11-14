@@ -9,7 +9,8 @@
     "pages/self_post/self_post",
     "pages/self_thread/self_thread",
     "pages/add_forum_article/add_forum_article",
-    "pages/info_index/info_index"
+    "pages/info_index/info_index",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "#323840",

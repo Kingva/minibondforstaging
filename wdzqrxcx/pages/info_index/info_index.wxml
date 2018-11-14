@@ -7,7 +7,9 @@
   </loading>
   <view class="page-body">
     <view class="page__bd">
-        <block wx:for="{{articleList}}" wx:for-item="article" wx:key="">
+   
+        <block wx:for="{{articleList}}" wx:for-item="article" wx:key="" wx:for-index="index" >
+         <ad  wx:if="{{index==0 }}"   unit-id="adunit-b1e1a8ecff5f9793"></ad>
           <view class="article" bindtap="toDetail" data-tid="{{article.tid}}">
             <view class="article-content">
               <view class="article-header">

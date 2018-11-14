@@ -4,7 +4,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    group_list: []
+    group_list: [],
+    searchValue:""
   },
 
   onShow: function() {
@@ -34,6 +35,16 @@ Page({
     })
   },
 
+  wxSearchInput: function(e) {
+    this.setData({
+      searchValue: e.detail.value,
+    })
+  },
+  wxSearchAll:function(e){
+    this.setData({
+      searchValue:"",
+    })
+  },
   toForumList: function(e) {
     // console.log(e);
     var fid = e.currentTarget.dataset.fid;

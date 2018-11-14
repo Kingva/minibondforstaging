@@ -1,0 +1,15 @@
+<view class="weui-search-bar">
+   <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="请输入平台名称" value="{{searchValue}}" bindinput="wxSearchInput" bindconfirm="wxSearchConfirm" />
+      <view class="weui-icon-clear" wx:if="{{searchValue.length > 0}}" bindtap="wxSearchAll">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+  </view>
+    <view class="weui-search-bar__cancel-btn" bindtap="wxSearchAll">
+         <text>全部</text>
+     </view>
+</view>
+
