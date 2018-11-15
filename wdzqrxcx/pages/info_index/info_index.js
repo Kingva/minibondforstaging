@@ -207,7 +207,7 @@ Page({
 
   onShareAppMessage: function (res) {
     return {
-      title: "",
+      title: "债权人都在这里抱团取暖",
       path: '/pages/index/index',
       success: function (res) {
         console.log(res);

@@ -1,6 +1,12 @@
 <!-- import zanui -->
 <import src="../../zanui/loadmore/index.wxml" />
 <!--index.wxml-->
+<view class="header-fix">
+  <view class="fix-btn" bindtap='toIndex'><image class="detail-icon" src='/resources/icon/index.png' />首页</view>
+  <button class="fix-btn share-btn" open-type='share'>
+  <image class="detail-icon" src='/resources/icon/share.png' />分享
+  </button>
+</view>
 <view class="container">
   <view class="page-body">
     <view class="page__bd">

@@ -235,6 +235,22 @@ Page({
       })
     }
   },
+  toIndex: function () {
+    wx.switchTab({
+      url: '../index/index',
+    })
+  },
+
+  onShareAppMessage: function (res) {
+    return {
+      title: "债权人都在这里抱团取暖",
+      
+      path: '/pages/forum_list/forum_list?fid=' + this.data.fid,
+      success: function (res) {
+        console.log(res);
+      },
+    }
+  },
   scrollToTop: function () {
     if (wx.pageScrollTo) {
       wx.pageScrollTo({

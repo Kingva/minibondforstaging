@@ -340,7 +340,7 @@ Page({
   
   onShareAppMessage: function (res) {
     return {
-      title: "",
+      title: "债权人都在这里抱团取暖",
       path: '/pages/detail/detail?tid='+this.data.tid,
       success: function(res) {
         console.log(res);
