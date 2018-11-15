@@ -33,7 +33,7 @@
           <view class="thread_order_item {{ digest == 1 ? 'thread_order_border' : '' }}" bindtap="get_digest_thread">精华</view>
         </view>
         <block wx:for="{{articleList}}"  wx:for-index="index"  wx:for-item="article" wx:key="">
-        <ad  wx:if="{{index==1 }}" unit-id="adunit-34d4e689a771700d"></ad>
+        <ad  wx:if="{{index%20==1 }}" unit-id="adunit-34d4e689a771700d"></ad>
           <view class="article" bindtap="toDetail" data-tid="{{article.tid}}">
             <view class="article-content">
               <view class="article-header">

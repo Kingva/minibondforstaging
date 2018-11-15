@@ -91,8 +91,9 @@
       </block>
       <view>
         <view class="resp-head">全部回复（{{thread_data.replies}}）</view>
-        <ad unit-id="adunit-eeba361a922ba17d"></ad>
+       <ad unit-id="adunit-eeba361a922ba17d"></ad>
         <block wx:for="{{articleList}}" wx:for-index="articleIndex" wx:for-item="article" wx:key="articleId">
+         <ad wx:if="{{articleIndex%20==0 && articleIndex!=0 }}" unit-id="adunit-eeba361a922ba17d"></ad>
           <view class="article">
             <view class="article-info">
               <view class="article-author">
